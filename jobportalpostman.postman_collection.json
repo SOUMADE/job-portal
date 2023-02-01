@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "d3b73511-52fd-47c2-9e54-d5e8d1dea6f6",
+		"name": "jobportalpostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5000/signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "raj",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/posted_jobs?username=raj",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"job_id\" : \"10\",\r\n    \"company_name\" : \"toy manufacturer\",\r\n    \"role\":\"clerk\",\r\n    \"job_desc\":\"for joy\",\r\n    \"salary\":\"5000\",\r\n    \"location\":\"goa\",\r\n    \"skills_required\":\"c++\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/posted_jobs?username=raj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"posted_jobs"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "raj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/apply_for_job?username=raj",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"job_id\":\"12\",\r\n    \"applicant_name\":\"Aman\",\r\n    \"application_id\": \"10\",\r\n    \"applicant_email\":\"abc@hotmail.com\",\r\n    \"applicant_resume\":\"www.abc.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/apply_for_job?username=raj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"apply_for_job"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "raj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/get_job_applied_by_user?username=raj",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"job_id\":\"12\",\r\n    \"applicant_name\":\"Aman\",\r\n    \"application_id\": \"10\",\r\n    \"applicant_email\":\"abc@hotmail.com\",\r\n    \"applicant_resume\":\"www.abc.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/get_job_applied_by_user?username=raj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"get_job_applied_by_user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "raj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/get_jobs_posted_by_user?username=raj",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"job_id\" : \"10\",\r\n    \"company_name\" : \"toy manufacturer\",\r\n    \"role\":\"clerk\",\r\n    \"job_desc\":\"for joy\",\r\n    \"salary\":\"5000\",\r\n    \"location\":\"goa\",\r\n    \"skills_required\":\"c++\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/get_jobs_posted_by_user?username=raj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"get_jobs_posted_by_user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "raj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/jobs_by_company?username=raj",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"job_id\" : \"11\",\r\n    \"company_name\" : \"toy manufacturer\",\r\n    \"role\":\"clerk\",\r\n    \"job_desc\":\"for joy\",\r\n    \"salary\":\"5000\",\r\n    \"location\":\"goa\",\r\n    \"skills_required\":\"c++\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/jobs_by_company?username=raj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"jobs_by_company"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "raj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/get_companyPostedjobs_details?username=raj",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"job_id\" : \"11\",\r\n    \"company_name\" : \"toy manufacturer\",\r\n    \"role\":\"clerk\",\r\n    \"job_desc\":\"for joy\",\r\n    \"salary\":\"5000\",\r\n    \"location\":\"goa\",\r\n    \"skills_required\":\"c++\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/get_companyPostedjobs_details?username=raj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"get_companyPostedjobs_details"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "raj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/apply_internships?username=raj",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"13\",\r\n    \"company\" : \"toy manufacturer\",\r\n    \"resume_url\":\"for joy\",\r\n    \"skills\":\"Python\",\r\n    \"role\":\"ABC\",\r\n    \"internduration\":\"6 Mnths\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/apply_internships?username=raj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"apply_internships"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "raj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/post_internships?username=raj",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company_name\" : \"Google\",\r\n    \"intern_type\" : \"SDE\",\r\n    \"location\":\"IN\",\r\n    \"resume_url\":\"www.abc.com\",\r\n    \"skills\":\"Python\",\r\n    \"role\":\"Dev\",\r\n    \"salary_expected\":\"6 lpa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/post_internships?username=raj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"post_internships"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "raj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/add_user_details?username=raj",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"AB\",\r\n    \"email_id\" : \"a.gmail\",\r\n    \"resume_url\":\"www.abc.com\",\r\n    \"skills\":\"py\",\r\n    \"age_group\":\"top\",\r\n    \"jobs_applied\":\"Dev\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/add_user_details?username=raj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"add_user_details"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "raj"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
